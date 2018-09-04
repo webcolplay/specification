@@ -3,7 +3,6 @@
 ## 内容目录
 
  1. [JavaScript编码规范](./javascript)
- <!-- 1. [React编码规范](./react) -->
  1. [CSS编码规范](./css)
  1. [HTML编码规范](./html)
  1. [README文档规范](./readme)
