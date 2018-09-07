@@ -22,7 +22,7 @@
 | 描述 | 对应ESLint规则 | 结果 |
 |------|------|------|
 | 禁用不必要的分号 | no-extra-semi ||
-| 分号前后是否有空格 | semi-spacing ||
+| 分号前后是否有空格 | semi-spacing |前不带空格后带空格|
 | 总是使用分号 | 无 ||
 
 ## 函数
@@ -60,7 +60,7 @@
 | 描述 | 对应ESLint规则 | 结果 |
 |------|------|------|
 | 禁止 this 关键字在类或类对象之外出现 | no-invalid-this ||
-| 当获取当前执行环境的上下文时，强制使用一致的命名 | consistent-this ||
+| 当获取当前执行环境的上下文时，强制使用一致的命名 | consistent-this |self/that/_this/_that|
 | 禁止在构造函数中，在调用 super() 之前使用 this 或 super | no-this-before-super ||
 
 ## Array 和 Object 直接量

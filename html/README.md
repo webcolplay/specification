@@ -25,12 +25,12 @@
 ```
 
  * 元素 `id` 必须保证页面唯一。
- * 元素 `id` 建议单词全字母小写，单词间以 `-` 分隔。同项目必须保持风格一致。
+ * 元素 `id` 建议单词`J_`开头，单词采用小驼峰命名。同项目必须保持风格一致。
  * `id`、`class`命名，在避免冲突并描述清楚的前提下尽可能短。
 
 ```html
 <!-- good -->
-<div id="nav"></div>
+<div id="J_navBar"></div>
 <!-- bad -->
 <div id="navigation"></div>
 
@@ -49,10 +49,11 @@
 
 ```html
 <!-- good -->
-<div id="hook"></div>
-<div class="J_Hook"></div>
+<div id="J_hook"></div>
+<div class="hook"></div>
 
 <!-- bad -->
+<div id="hook"></div>
 <div class="hook"></div>
 ```
  * 同一页面，应避免使用相同的 `name` 与 `id`。
@@ -237,7 +238,7 @@
 
  * `JavaScript`应当放在页面末尾或采用异步加载。
 
- * 引用外部资源的`URL`协议部分与页面相同，省略协议前缀。（使用 `protocol-relative URL` 引入 CSS，在`IE7/8`下，会发两次请求。是否使用`protocol-relative URL`。）
+ * 引用外部资源的`URL`协议部分与页面相同，省略协议前缀。
 
 
 ## head
@@ -294,61 +295,9 @@
 ### 按钮
 
  * 使用 `button` 元素时必须指明 `type` 属性值。（button 元素的默认 type 为 submit）
+ * IE默认 `type` 是 `"button"` , 其他浏览器（包括 `W3C` 规范）默认 `type` 是 `"submit"`
 
 ```html
 <button type="submit">提交</button>
 <button type="button">取消</button>
-```
-
-### 可访问性 (A11Y)
-
- * 当使用`JavaScript`进行表单提交时，如果条件允许，应使原生提交功能正常工作。（当浏览器 JS 运行错误或关闭JS时，提交功能将无法工作。如果正确指定了 form 元素的 action 属性和表单控件的 name 属性时，提交仍可继续进行。）
-
-```html
-<form action="/login" method="post">
-    <p><input name="username" type="text" placeholder="用户名"></p>
-    <p><input name="password" type="password" placeholder="密码"></p>
-</form>
-```
-
- * 针对移动设备开发的页面时，根据内容类型指定输入框的 `type` 属性。
-
-```html
-<input type="date">
-```
-
-
-## 多媒体
-
- * 在现代浏览器中使用`audio`以及`video`标签来播放音频、视频，使用退化到插件的方式来对旧浏览器进行支持。
-
-音频应尽可能覆盖到如下格式：MP3、WAV、Ogg；
-
-视频应尽可能覆盖到如下格式：MP4、WebM、Ogg；
-
-
-```html
-<audio controls>
-    <source src="audio.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    <object width="100" height="50" data="audio.mp3">
-        <embed width="100" height="50" src="audio.swf">
-    </object>
-</audio>
-
-<video width="100" height="50" controls>
-    <source src="video.mp4" type="video/mp4">
-    <source src="video.ogg" type="video/ogg">
-    <object width="100" height="50" data="video.mp4">
-        <embed width="100" height="50" src="video.swf">
-    </object>
-</video>
-```
-
- * 只在必要的时候开启音视频的自动播放。
-
- * 在 `object`标签内部提供指示浏览器不支持该标签的说明。
-
-```html
-<object width="100" height="50" data="something.swf">DO NOT SUPPORT THIS TAG</object>
 ```
