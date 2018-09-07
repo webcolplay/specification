@@ -27,7 +27,7 @@ background-image: url('../img/a.jpg');
 
 | 描述 | 对应styleLint规则 | 结果 |
 |------|------|------|
-|缩进|indentation|4制表符长度|
+|缩进|indentation|2制表符长度|
 |限制允许嵌套的深度|max-nesting-depth|4|
 |禁止低优先级的选择器出现在高优先级的选择器之后|no-descending-specificity||
 |禁止出现重复的选择器|||
